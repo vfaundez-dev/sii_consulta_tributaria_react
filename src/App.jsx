@@ -1,8 +1,10 @@
+import ToggleTheme from "./components/ToggleTheme"
 
 function App() {
 
   return (
-    <div>
+    <div className="min-h-screen bg-background text-foreground">
+      <ToggleTheme />
       <h1>VFH SII Consulta Tributaria</h1>
     </div>
   )
