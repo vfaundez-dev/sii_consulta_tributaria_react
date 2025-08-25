@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/ubuntu-mono':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@radix-ui/react-switch':
         specifier: ^1.2.6
         version: 1.2.6(@types/react-dom@19.1.7(@types/react@19.1.11))(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -265,6 +268,9 @@ packages:
   '@eslint/plugin-kit@0.3.5':
     resolution: {integrity: sha512-Z5kJ+wU3oA7MMIqVR9tyZRtjYPr4OC004Q4Rw7pgOKUOKkJfZ3O24nz3WYfGRpMDNmcOi3TwQOmgm7B7Tpii0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource/ubuntu-mono@5.2.6':
+    resolution: {integrity: sha512-9oJsnQbCl0du6Sy5DITlCY+OwxYYPd2z5R55KF8qZXmJSoWPoMSY6bGi81eBvKU4Jdx8/ETRfN9NJvoMQ9ch3g==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1347,6 +1353,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.15.2
       levn: 0.4.1
+
+  '@fontsource/ubuntu-mono@5.2.6': {}
 
   '@humanfs/core@0.19.1': {}
 

@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <ToggleTheme />
-      <h1>VFH SII Consulta Tributaria</h1>
+      <h1 className="text-4xl">VFH SII Consulta Tributaria</h1>
     </div>
   )
 }
