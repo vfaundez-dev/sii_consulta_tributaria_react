@@ -1,6 +1,6 @@
-import "@theme-toggles/react/css/Classic.css"
-import { useState, useEffect } from 'react';
-import { Classic } from '@theme-toggles/react'
+import "@theme-toggles/react/css/Classic.css";
+import { useState, useEffect } from "react";
+import { Classic } from "@theme-toggles/react"
 
 const ToggleTheme = () => {
   const [theme, setTheme] = useState('light');
@@ -20,11 +20,11 @@ const ToggleTheme = () => {
 
   return (
     <div className="fixed top-4 right-4 flex justify-end items-center gap-2">
-      <p className="font-semibold">{ theme === 'light' ? 'Light' : 'Dark' }</p>
+      <p className="font-semibold">{theme === 'light' ? 'Light' : 'Dark'}</p>
       <Classic
-        duration={ 500 }
-        toggled={ theme === 'dark' }
-        toggle={ toggleTheme }
+        duration={500}
+        toggled={theme === 'dark'}
+        toggle={toggleTheme}
         className="text-4xl cursor-pointer"
       />
     </div>

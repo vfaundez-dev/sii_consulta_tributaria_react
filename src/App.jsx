@@ -1,6 +1,6 @@
-import Header from "./components/Header"
-import Main from "./components/Main"
-import ToggleTheme from "./components/ToggleTheme"
+import Header from "./components/Header";
+import Main from "./components/Main";
+import ToggleTheme from "./components/ToggleTheme";
 
 function App() {
 

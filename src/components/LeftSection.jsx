@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
-import jsonExample from "../mooks/exampleJosn.json"
-import CopyClipboard from "./CopyClipboard"
+import { Card, CardContent } from "@/components/ui/card";
+import jsonExample from "../mooks/exampleJosn.json";
+import CopyClipboard from "./CopyClipboard";
 
 const LeftSection = () => {
 

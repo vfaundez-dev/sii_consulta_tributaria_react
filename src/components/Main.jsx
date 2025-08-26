@@ -1,10 +1,12 @@
-import LeftSection from "./LeftSection"
+import LeftSection from "./LeftSection";
+import RightSection from "./RightSection";
 
 const Main = () => {
   return (
     <main className="container mx-auto px-6 pb-12">
       <div className="grid grid-cols-1 lg:grid-cols-10 gap-8">
         <LeftSection />
+        <RightSection />
       </div>
     </main>
   )
