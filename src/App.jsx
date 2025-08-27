@@ -6,7 +6,7 @@ import ToggleTheme from "./components/ToggleTheme";
 function App() {
 
   return (
-    <div className="min-h-dvh bg-background text-foreground">
+    <div className="min-h-dvh flex flex-col bg-background text-foreground">
       <ToggleTheme />
       <Header />
       <Main />
