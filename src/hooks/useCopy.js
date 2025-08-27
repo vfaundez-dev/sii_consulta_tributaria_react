@@ -7,6 +7,8 @@ export const useCopy = () => {
   const copyToClipboard = async ({ jsonElement }) => {
     try {
 
+      if (jsonElement.length === 0) return;
+
       await navigator.clipboard.writeText(JSON.stringify(jsonElement, null, 2))
       setCopied(true)
       setTimeout( () => setCopied(false), 2000 );
