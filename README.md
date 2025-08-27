@@ -13,11 +13,28 @@ Este es un sistema desarrollado con **React** que permite realizar consultas dir
 3. **Extracción de información** del HTML utilizando la librería **Cheerio** y transformandola a formato JSON.
 4. **Despliegue de la información obtenida** en formato `JSON` para su visualización en la interfaz de usuario.
 
+## Tecnologías Utilizadas
+
+- React  
+- Axios  
+- Cheerio  
+- pnpm  
+- Tailwind CSS con Shadcn  
+- Vite
+
 ## Requisitos
 
 - Tener instalado **Node.js** (versión 19 o superior).
 - Tener instalado **pnpm** (gestor de paquetes que se utiliza en este proyecto).
 - Conocimientos básicos de **React** y **JavaScript**.
+
+## 4. Uso / Flujo de datos
+
+1. El usuario ingresa RUT y DV.  
+2. Se solicita captcha dinámico.  
+3. Se envía POST al SII (Zeus).  
+4. Se recibe HTML, se parsea con Cheerio a JSON.  
+5. Se renderiza JSON en UI.
 
 ## Respuesta de la API
 
