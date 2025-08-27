@@ -8,11 +8,23 @@ import { SiiDataContext } from "../context/SiiDataContext";
 const RightSection = () => {
   const [rut, setRut] = useState('');
   const [dv, setDv] = useState('');
+  const [inputError, setInputError] = useState(null);
   const { getConsolidateData } = useContext(SiiDataContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = document.getElementById('sii-form');
+    setInputError(null);
+
+    if (!rut || !dv) {
+      setInputError('Por favor, complete todos los campos.');
+      return;
+    }
+
     await getConsolidateData({ rut, dv });
+    form.reset();
+    setRut('');
+    setDv('');
   }
 
   return (
@@ -33,24 +45,29 @@ const RightSection = () => {
         <CardContent>
           <h3 className="text-lg font-semibold mb-4 text-card-foreground">RUT a Consultar</h3>
 
-          <form className="space-y-4" onSubmit={ handleSubmit }>
+          <form id="sii-form" className="space-y-4" onSubmit={ handleSubmit }>
             <div className="flex gap-3">
               <Input
                 type="text"
                 name="rut"
                 placeholder="RUT sin puntos ni guión"
+                minLength={6}
+                maxLength={9}
                 className="bg-input border-border text-foreground placeholder-muted-foreground hover:border-primary focus:border-muted-foreground focus:ring-1 focus:ring-muted-foreground transition-colors duration-200 flex-1"
                 value={ rut }
                 onChange={ (e) => setRut(e.target.value) }
+                required
               />
               <Input
                 type="text"
                 name="dv"
                 placeholder="DV"
+                minLength={1}
                 maxLength={1}
                 className="bg-input border-border text-foreground placeholder-muted-foreground hover:border-primary focus:border-muted-foreground focus:ring-1 focus:ring-muted-foreground transition-colors duration-200 w-16"
                 value={ dv }
                 onChange={ (e) => setDv(e.target.value) }
+                required
               />
             </div>
             <Button
@@ -59,6 +76,7 @@ const RightSection = () => {
             >
               Consultar
             </Button>
+            { inputError && <p className="text-red-500 text-sm">{ inputError }</p> }
           </form>
         </CardContent>
       </Card>
