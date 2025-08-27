@@ -1,5 +1,5 @@
 import { useConsolidateData } from "../hooks/useConsolidateData";
-import { SiiDataContext } from "./siiDataContext";
+import { SiiDataContext } from "./SiiDataContext.js";
 
 export const SiiDataProvider = ({ children }) => {
 
