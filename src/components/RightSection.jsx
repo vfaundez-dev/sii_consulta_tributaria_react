@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useContext } from "react";
-import { SiiDataContext } from "../context/siiDataContext";
+import { SiiDataContext } from "../context/SiiDataContext";
 
 const RightSection = () => {
   const [rut, setRut] = useState('');

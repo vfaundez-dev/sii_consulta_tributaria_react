@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BrushCleaning } from 'lucide-react';
 import CopyClipboard from "./CopyClipboard";
-import { SiiDataContext } from "../context/siiDataContext";
+import { SiiDataContext } from "../context/SiiDataContext";
 
 const LeftSection = () => {
 
