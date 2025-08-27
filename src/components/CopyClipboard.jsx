@@ -11,7 +11,7 @@ const CopyClipboard = ({ jsonElement }) => {
       <Button
         variant="outline"
         size="sm"
-        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-border dark:bg-transparent dark:text-secondary-foreground dark:hover:bg-accent dark:hover:border-border dark:hover:text-accent-foreground transition-all duration-200 bg-transparent hover:shadow-md"
+        className="cursor-pointer border-primary text-primary hover:bg-primary hover:text-primary-foreground dark:border-border dark:bg-transparent dark:text-secondary-foreground dark:hover:bg-accent dark:hover:border-border dark:hover:text-accent-foreground transition-all duration-200 bg-transparent hover:shadow-md"
         onClick={ () => copyToClipboard({ jsonElement }) }
       >
         { !copied

@@ -2,35 +2,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { useCaptcha } from "../hooks/useCaptcha";
-import { useZeusData } from "../hooks/useZeusData";
+import { useContext } from "react";
+import { SiiDataContext } from "../context/siiDataContext";
 
 const RightSection = () => {
   const [rut, setRut] = useState('');
   const [dv, setDv] = useState('');
-
-  const { getCaptcha } = useCaptcha();
-  const { siiFetchData } = useZeusData();
+  const { getConsolidateData } = useContext(SiiDataContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const { code, captcha } = await getCaptcha();
-
-    if(!code) {
-      alert('Error al obtener el captcha. Intenta nuevamente.');
-      return;
-    }
-
-    const htmlResponse = await siiFetchData(rut, dv, code, captcha);
-
-    if(!htmlResponse) {
-      alert('Error al obtener datos desde Zeus.');
-      return;
-    }
-
-    console.log(htmlResponse);
-
+    await getConsolidateData({ rut, dv });
   }
 
   return (
@@ -73,7 +55,7 @@ const RightSection = () => {
             </div>
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 rounded-lg py-2.5 font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
+              className="cursor-pointer w-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 rounded-lg py-2.5 font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
             >
               Consultar
             </Button>
@@ -83,7 +65,7 @@ const RightSection = () => {
 
       <Button
         variant="outline"
-        className="w-full border-primary text-primary font-bold hover:bg-primary hover:text-primary-foreground dark:border-border dark:text-muted-foreground dark:bg-transparent dark:hover:bg-primary dark:hover:border-primary dark:hover:text-secondary-foreground hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 ease-in-out transform bg-transparent"
+        className="cursor-pointer w-full border-primary text-primary font-bold hover:bg-primary hover:text-primary-foreground dark:border-border dark:text-muted-foreground dark:bg-transparent dark:hover:bg-primary dark:hover:border-primary dark:hover:text-secondary-foreground hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 ease-in-out transform bg-transparent"
         asChild
       >
         <a href="https://github.com/vfaundez-dev" target="_blank" rel="noopener noreferrer">
