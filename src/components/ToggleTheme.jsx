@@ -32,7 +32,6 @@ const ToggleTheme = () => {
         <Classic
           duration={500}
           toggled={theme === "dark"}
-          // quitamos toggle aquí porque ya lo maneja el button
           className="text-4xl pointer-events-none"
         />
       </button>
