@@ -9,6 +9,8 @@ const LeftSection = () => {
 
   const { siiData, loading, error, clearData } = useContext(SiiDataContext);
 
+  console.log(siiData);
+
   return (
     <div className="lg:col-span-6">
       <Card className="bg-card border-border rounded-sm shadow-lg">
