@@ -4,12 +4,13 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useContext } from "react";
 import { SiiDataContext } from "../context/SiiDataContext";
+import { Loader2Icon } from "lucide-react";
 
 const RightSection = () => {
   const [rut, setRut] = useState('');
   const [dv, setDv] = useState('');
   const [inputError, setInputError] = useState(null);
-  const { getConsolidateData } = useContext(SiiDataContext);
+  const { getConsolidateData, loading } = useContext(SiiDataContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,8 +74,15 @@ const RightSection = () => {
             <Button
               type="submit"
               className="cursor-pointer w-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 rounded-lg py-2.5 font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
+              disabled={ loading }
             >
-              Consultar
+              { loading ? (
+                <>
+                  <Loader2Icon className="animate-spin" /> Cargando...
+                </>
+              ) : (
+                'Consultar'
+              )}
             </Button>
             { inputError && <p className="text-red-500 text-sm">{ inputError }</p> }
           </form>

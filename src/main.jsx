@@ -5,9 +5,7 @@ import App from './App.jsx'
 import { SiiDataProvider } from './context/SiiDataProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <SiiDataProvider>
       <App />
     </SiiDataProvider>
-  </StrictMode>,
 )
